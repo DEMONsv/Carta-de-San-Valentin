@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Carta de San Valentín</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Sacramento');
+
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      font-family: 'Sacramento', cursive;
+      background-color: #f1e3d3;
+      overflow: hidden;
+      margin: 0;
+    }
+
+    .valentines-day {
+      position: relative;
+      cursor: pointer;
+    }
+
+    .envelope {
+      position: relative;
+      filter: drop-shadow(0 0 25px rgba(0, 0, 0, .3));
+    }
+
+    .envelope:before {
+      content: "";
+      position: absolute;
+      width: 254px;
+      height: 254px;
+      background-color: #ff9494;
+      transform: rotate(-45deg);
+      border-radius: 0 15px 0 0;
+      left: -37px;
+      top: -82px;
+    }
+
+    .envelope:after {
+      content: "";
+      position: absolute;
+      background-color: #ff9494;
+      width: 360px;
+      height: 225px;
+      left: -90px;
+      top: 45px;
+    }
+
+    .heart {
+      position: relative;
+      background-color: #e01911;
+      display: inline-block;
+      height: 180px;
+      top: 50px;
+      left: 0;
+      transform: rotate(-45deg);
+      width: 180px;
+      filter: drop-shadow(0 -10px 25px rgba(0, 0, 0, .3));
+      transition: .5s;
+    }
+
+    .heart:before,
+    .heart:after {
+      content: "";
+      background-color: #e01911;
+      border-radius: 50%;
+      height: 180px;
+      width: 180px;
+      position: absolute;
+    }
+
+    .heart:before {
+      top: -100px;
+      left: 0;
+    }
+
+    .heart:after {
+      left: 100px;
+      top: 0;
+    }
+
+    .front {
+      position: absolute;
+      width: 0;
+      height: 0;
+      border-right: 190px solid #fbd2d2;
+      border-top: 113px solid transparent;
+      border-bottom: 113px solid transparent;
+      top: 44px;
+      left: 80px;
+      z-index: 4;
+    }
+
+    .front:before {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 0;
+      border-left: 190px solid #fbd2d2;
+      border-top: 113px solid transparent;
+      border-bottom: 113px solid transparent;
+      top: -113px;
+      left: -170px;
+    }
+
+    .front:after {
+      width: 0;
+      height: 0;
+      position: absolute;
+      content: "";
+      border-bottom: 150px solid #fce7e9;
+      border-right: 180px solid transparent;
+      border-left: 180px solid transparent;
+      top: -36px;
+      left: -170px;
+    }
+
+    .text {
+      position: absolute;
+      font-family: arial;
+      letter-spacing: 5px;
+      text-align: center;
+      color: white;
+      z-index: 2;
+      top: 80px;
+      left: 15px;
+      transition: .5s;
+    }
+
+    .valentines-day:hover .heart {
+      transform: translateY(-50px) rotate(-45deg);
+    }
+
+    .valentines-day:hover .text {
+      transform: translateY(-50px);
+    }
+
+    #card {
+      display: none;
+      position: relative;
+      width: 800px;
+      height: 600px;
+      margin: 0 auto;
+      perspective: 1000px;
+    }
+
+    .book {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      transform-style: preserve-3d;
+      transition: transform 1s;
+    }
+
+    .page {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: white;
+      box-sizing: border-box;
+      padding: 40px;
+      backface-visibility: hidden;
+      border: 1px solid #ddd;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      display: none; /* Ocultar todas las páginas al inicio */
+    }
+
+    .page img {
+      max-width: 100%;
+      max-height: 300px;
+      margin-bottom: 20px;
+      border-radius: 10px;
+    }
+
+    .page h2 {
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+
+    .page p {
+      font-size: 20px;
+      line-height: 1.5;
+    }
+
+    .controls {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .controls button {
+      padding: 10px 20px;
+      font-size: 16px;
+      margin: 0 10px;
+      cursor: pointer;
+      background-color: #e01911;
+      color: white;
+      border: none;
+      border-radius: 5px;
+    }
+
+    .controls button:hover {
+      background-color: #c01810;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="valentines-day">
+    <div class="envelope"></div>
+    <div class="heart"></div>
+    <div class="text">HAPPY <br>VALENTINE'S <br>DAY!</div>
+    <div class="front"></div>
+  </div>
+
+  <div id="card">
+    <div class="book">
+      <div id="page-1" class="page">
+        <h2>Mabel Olivera</h2>
+        <p>Queridos programadores de todo el mundo,</p>
+        <p>En este día de San Valentín, quiero expresar mi profunda admiración por su increíble trabajo y dedicación.</p>
+        <img src="https://via.placeholder.com/400x300" alt="Imagen 1">
+        <img src="https://via.placeholder.com/400x300" alt="Imagen 1">
+      </div>
+      <div id="page-2" class="page">
+        <p>Cada línea de código que escriben es como una declaración de amor al mundo digital.</p>
+        <p>Cada algoritmo que diseñan es un poema de ingenio y creatividad.</p>
+        <img src="https://via.placeholder.com/400x300" alt="Imagen 2">
+      </div>
+      <div id="page-3" class="page">
+        <p>¡Feliz día de San Valentín, queridos programadores!</p>
+        <p>Que sus corazones estén llenos de amor y sus líneas de código estén libres de bugs.</p>
+        <img src="https://via.placeholder.com/400x300" alt="Imagen 3">
+      </div>
+      <div id="page-4" class="page">
+        <p>Gracias por hacer del mundo un lugar mejor con su pasión y dedicación.</p>
+        <p>¡Sigan codificando con amor!</p>
+        <img src="https://via.placeholder.com/400x300" alt="Imagen 4">
+      </div>
+      <div id="page-5" class="page">
+        <p>En cada proyecto que emprenden, demuestran que el amor por la tecnología no tiene límites.</p>
+        <p>¡Sigan inspirando al mundo con su creatividad!</p>
+        <img src="https://via.placeholder.com/400x300" alt="Imagen 5">
+      </div>
+      <div id="page-6" class="page">
+        <p>Que cada día sea una nueva oportunidad para crear algo extraordinario.</p>
+        <p>¡Feliz San Valentín a todos los programadores!</p>
+        <img src="https://via.placeholder.com/400x300" alt="Imagen 6">
+      </div>
+    </div>
+    <div class="controls">
+      <button onclick="prevPage()">Anterior</button>
+      <button onclick="nextPage()">Siguiente</button>
+    </div>
+  </div>
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+  <script>
+    let currentPage = 1;
+    const totalPages = 6; // Número total de páginas
+
+    $(document).ready(function () {
+      // Mostrar la primera página al inicio
+      showPage(currentPage);
+    });
+
+    function showPage(pageNumber) {
+      $('.page').hide(); // Ocultar todas las páginas
+      $(`#page-${pageNumber}`).show(); // Mostrar la página actual
+    }
+
+    function nextPage() {
+      if (currentPage < totalPages) {
+        currentPage++;
+        showPage(currentPage);
+      }
+    }
+
+    function prevPage() {
+      if (currentPage > 1) {
+        currentPage--;
+        showPage(currentPage);
+      }
+    }
+
+    $('.valentines-day').click(function () {
+      $('.envelope').css({ 'animation': 'fall 3s linear 1', '-webkit-animation': 'fall 3s linear 1' });
+      $('.envelope').fadeOut(800, function () {
+        $('.valentines-day .heart, .valentines-day .text, .valentines-day .front').hide();
+        $('#card').css({ 'display': 'block', 'opacity': 0, 'transform': 'scale(0.1)' });
+        $('#card').animate({ 'opacity': 1 }, {
+          duration: 1000,
+          step: function (now, fx) {
+            var scale = 1 + Math.sin(now * Math.PI) * 0.1;
+            $(this).css('transform', 'scale(' + scale + ')');
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
