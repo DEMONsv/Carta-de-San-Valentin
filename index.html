@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Viewport para dispositivos móviles -->
   <title>Carta de San Valentín</title>
   <style>
     @import url('https://fonts.googleapis.com/css?family=Sacramento');
@@ -141,7 +142,7 @@
     #card {
       display: none;
       position: relative;
-      width: 800px;
+      width: 1000px;
       height: 600px;
       margin: 0 auto;
       perspective: 1000px;
@@ -174,11 +175,13 @@
     }
 
     .page img {
-      max-width: 100%;
+      max-width: 250px;
       max-height: 300px;
       margin-bottom: 20px;
       border-radius: 10px;
     }
+
+    
 
     .page h2 {
       font-size: 28px;
@@ -187,7 +190,8 @@
 
     .page p {
       font-size: 20px;
-      line-height: 1.5;
+      font-family: Arial;
+      line-height: 1;
     }
 
     .page button {
@@ -208,14 +212,16 @@
     .controls {
       position: absolute;
       bottom: 20px;
-      left: 50%;
-      transform: translateX(-50%);
+      left: 0;
+      right: 0;
+      display: flex;
+      justify-content: space-between;
+      padding: 0 20px;
     }
 
     .controls button {
       padding: 10px 20px;
       font-size: 16px;
-      margin: 0 10px;
       cursor: pointer;
       background-color: #e01911;
       color: white;
@@ -226,6 +232,66 @@
     .controls button:hover {
       background-color: #c01810;
     }
+
+    /* Estilos para dispositivos móviles */
+    @media (max-width: 768px) {
+      #card {
+        width: 100%; /* Ocupa el 100% del ancho en móviles */
+        height: auto; /* Altura automática */
+        padding: 20px; /* Reducir el padding */
+      }
+
+      .page {
+        padding: 20px; /* Reducir el padding en móviles */
+      }
+
+      .page h2 {
+        font-size: 24px; /* Reducir el tamaño del título en móviles */
+      }
+
+      .page p {
+        font-size: 18px; /* Reducir el tamaño del texto en móviles */
+      }
+
+      .page img {
+        max-height: 200px; /* Reducir el tamaño de las imágenes en móviles */
+      }
+
+      .page button {
+        font-size: 14px; /* Reducir el tamaño del botón en móviles */
+        padding: 8px 16px;
+      }
+
+      .controls button {
+        font-size: 14px; /* Reducir el tamaño de los botones de control en móviles */
+        padding: 8px 16px;
+      }
+    }
+
+    /* Estilos para pantallas muy pequeñas (ej: smartphones pequeños) */
+    @media (max-width: 480px) {
+      .page h2 {
+        font-size: 20px; /* Tamaño de título aún más pequeño */
+      }
+
+      .page p {
+        font-size: 16px; /* Tamaño de texto aún más pequeño */
+      }
+
+      .page img {
+        max-height: 150px; /* Imágenes aún más pequeñas */
+      }
+
+      .page button {
+        font-size: 12px; /* Botones aún más pequeños */
+        padding: 6px 12px;
+      }
+
+      .controls button {
+        font-size: 12px; /* Botones de control aún más pequeños */
+        padding: 6px 12px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -233,42 +299,47 @@
   <div class="valentines-day">
     <div class="envelope"></div>
     <div class="heart"></div>
-    <div class="text">HAPPY <br>VALENTINE'S <br>DAY!</div>
+    <div class="text">FELIZ DIA <br> DE <br>SAN VALENTIN </div>
     <div class="front"></div>
   </div>
 
   <div id="card">
     <div class="book">
       <div id="page-1" class="page">
-        <h2>Mabel Olivera</h2>
-        <p>Queridos programadores de todo el mundo,</p>
-        <p>En este día de San Valentín, quiero expresar mi profunda admiración por su increíble trabajo y dedicación.</p>
-        <img src="https://via.placeholder.com/400x300" alt="Imagen 1">
+        <p>PARA EL AMOR DE MI VIDA</p>
+        <p>
+          Desde el momento en que entraste en mi vida, todo cambió. Contigo, cada día es una nueva página en un libro que nunca quiero terminar de leer. Eres mi aventura favorita, la historia que siempre quiero vivir, el viaje que no tiene fin. Cada risa, cada mirada, cada momento a tu lado es un tesoro que guardo en lo más profundo de mi corazón. Contigo, el amor no tiene fronteras ni límites; es un camino lleno de emociones, de descubrimientos y de momentos que atesoro como si fueran joyas. Eres mi compañera de vida, la persona que me hace creer que no hay sueño demasiado grande si estamos juntos. Cada día a tu lado es un recordatorio de que el amor verdadero es aquel que nos hace crecer, que nos desafía y que nos llena de alegría. Te amo más de lo que las palabras pueden expresar, y prometo caminar a tu lado en esta aventura eterna llamada amor. Porque contigo, incluso lo ordinario se vuelve extraordinario. Eres mi todo, mi razón de ser, y no hay nada en este mundo que me haga más feliz que saber que eres mía.</p>
+        <img src="imagen 1.jpg" alt="Imagen 1">
       </div>
       <div id="page-2" class="page">
-        <p>Cada línea de código que escriben es como una declaración de amor al mundo digital.</p>
-        <p>Cada algoritmo que diseñan es un poema de ingenio y creatividad.</p>
-        <img src="https://via.placeholder.com/400x300" alt="Imagen 2">
+        <p>MI NIÑA HERMOSA</p>
+        <p> En un mundo que a veces parece caótico e impredecible, tú eres mi lugar seguro. Cuando estoy contigo, todo lo demás desaparece, y solo importa el calor de tu abrazo, la tranquilidad que me das y la paz que siento al saber que estás a mi lado. Eres mi refugio en medio de la tormenta, mi puerto seguro cuando todo parece derrumbarse. No hay nada que me haga sentir más afortunado que saber que puedo contar contigo, que eres mi hogar en cualquier lugar del mundo. Contigo, he aprendido que el amor no solo se trata de grandes gestos, sino también de los pequeños detalles que nos hacen sentir vivos. Es en tu mirada, en tu sonrisa y en tu forma de amarme donde encuentro la fuerza para seguir adelante. Gracias por ser mi luz en los días oscuros, por amarme tal como soy y por hacerme sentir que no estoy solo. Te amo con toda mi alma, y no hay nada en este mundo que me haga más feliz que saber que eres mía. Eres mi paz, mi refugio y mi hogar, y no hay lugar en el mundo donde me sienta más completo que a tu lado.</p>
+        <img src="imagen 2.jpg" alt="Imagen 2">
+        
       </div>
       <div id="page-3" class="page">
-        <p>¡Feliz día de San Valentín, queridos programadores!</p>
-        <p>Que sus corazones estén llenos de amor y sus líneas de código estén libres de bugs.</p>
-        <img src="https://via.placeholder.com/400x300" alt="Imagen 3">
+        <p>Eres la razón por la que mis días tienen color y mis noches tienen estrellas. Cada vez que te miro, siento que el mundo se detiene para recordarme lo afortunado que soy de tenerte en mi vida. Eres mi musa, mi inspiración y mi motivación para ser mejor cada día. Contigo, he aprendido que el amor no solo se siente, sino que también se vive, se respira y se comparte. Eres la persona que da sentido a mis sueños, la que llena mi corazón de alegría y la que me hace creer que todo es posible. Cada día a tu lado es un recordatorio de que el amor verdadero es aquel que nos hace crecer, que nos desafía y que nos llena de felicidad. Eres mi razón para sonreír, mi fuerza en los momentos difíciles y mi luz en la oscuridad. Te amo más de lo que el tiempo puede medir, y prometo amarte por siempre. Porque contigo, incluso lo ordinario se vuelve extraordinario. Eres mi todo, mi razón de ser, y no hay nada en este mundo que me haga más feliz que saber que eres mía.</p>
+        <img src="imagen 3.jpg" alt="Imagen 3">
       </div>
       <div id="page-4" class="page">
-        <p>Gracias por hacer del mundo un lugar mejor con su pasión y dedicación.</p>
-        <p>¡Sigan codificando con amor!</p>
-        <img src="https://via.placeholder.com/400x300" alt="Imagen 4">
+        <p>En un mundo tan caótico y lleno de incertidumbre, tú eres mi refugio. Cuando estoy contigo, todo parece detenerse, como si el tiempo nos diera un respiro para disfrutar de nuestra complicidad. Tu voz es mi melodía favorita, tu abrazo es mi lugar seguro, y tu amor es el faro que guía mi camino.</p>
+        <p>Contigo he descubierto que el amor no solo se trata de grandes gestos, sino también de los pequeños detalles que nos hacen únicos. Es en tus risas, en tus miradas cómplices y en esos silencios que lo dicen todo donde encuentro la magia de lo que compartimos. Eres mi mejor amiga, mi confidente y mi compañera de vida. No hay nadie en el mundo que me haga sentir tan completo como tú. Cada momento a tu lado es un recordatorio de que el amor verdadero se construye día a día, con paciencia, comprensión y complicidad. Contigo, he aprendido que el amor no solo se trata de grandes gestos, sino también de los pequeños detalles que nos hacen sentir vivos. Es en tu mirada, en tu sonrisa y en tu forma de amarme donde encuentro la fuerza para seguir adelante. Gracias por ser mi luz en los días oscuros, por amarme tal como soy y por hacerme sentir que no estoy solo. Te amo con todo mi corazón, y no hay nada en este mundo que me haga más feliz que saber que eres mía. Eres mi paz, mi refugio y mi hogar, y no hay lugar en el mundo donde me sienta más completo que a tu lado.</p>
+        <img src="imagen 6.jpg" alt="Imagen 6">
       </div>
       <div id="page-5" class="page">
-        <p>En cada proyecto que emprenden, demuestran que el amor por la tecnología no tiene límites.</p>
-        <p>¡Sigan inspirando al mundo con su creatividad!</p>
-        <img src="https://via.placeholder.com/400x300" alt="Imagen 5">
+        <p>Aunque el tiempo pase y las estaciones cambien, mi amor por ti siempre será el mismo: intenso, sincero y eterno. Eres la luz que ilumina mi camino y la razón por la que creo en el amor que trasciende el tiempo. Cada día a tu lado es un regalo que atesoro con todo mi ser. No importa cuántos años pasen, siempre serás la dueña de mi corazón, la persona que hace que todo tenga sentido. Te amo hoy, mañana y siempre, y prometo amarte en cada latido de mi corazón. Eres mi eternidad, mi todo. Contigo, he aprendido que el amor no solo se trata de grandes gestos, sino también de los pequeños detalles que nos hacen sentir vivos. Es en tu mirada, en tu sonrisa y en tu forma de amarme donde encuentro la fuerza para seguir adelante. Gracias por ser mi luz en los días oscuros, por amarme tal como soy y por hacerme sentir que no estoy solo. Te amo con todo mi corazón, y no hay nada en este mundo que me haga más feliz que saber que eres mía. Eres mi paz, mi refugio y mi hogar, y no hay lugar en el mundo donde me sienta más completo que a tu lado.</p>
+        <img src="imagen 5.jpg" alt="Imagen 5">
       </div>
       <div id="page-6" class="page">
-        <p>Que cada día sea una nueva oportunidad para crear algo extraordinario.</p>
-        <p>¡Feliz San Valentín a todos los programadores!</p>
-        <img src="https://via.placeholder.com/400x300" alt="Imagen 6">
+        <p>Hoy, mientras escribo estas palabras, no puedo evitar sentir una profunda gratitud por todo lo que hemos vivido juntos. Tres años han pasado desde que nuestros caminos se unieron, y cada día a tu lado ha sido un regalo que atesoro en lo más profundo de mi corazón. Eres mi compañera, mi confidente, mi mejor amiga y el amor de mi vida.</p>
+        <p>Recuerdo el primer día que te vi, cómo tu sonrisa iluminó la habitación y cómo, sin saberlo, mi corazón ya sabía que eras especial. Desde entonces, hemos construido algo que va más allá de las palabras: un amor que ha crecido con el tiempo, que ha superado desafíos y que se ha fortalecido con cada risa, cada abrazo y cada momento compartido.
+
+          En estos tres años, hemos creado recuerdos que atesoro como si fueran tesoros. Desde nuestras primeras citas llenas de nervios y emociones, hasta las noches interminables de conversaciones profundas bajo las estrellas. Cada momento contigo ha sido una pieza fundamental en este viaje que llamamos amor. Me encanta cómo podemos pasar horas hablando de todo y de nada, cómo tus risas llenan el aire de una alegría contagiosa, y cómo tus abrazos tienen el poder de hacerme sentir que todo estará bien, sin importar lo que pase afuera.
+          
+          Pero lo que más admiro de ti es tu capacidad de amar. Eres la persona más generosa, comprensiva y cariñosa que he conocido. Tu amor me ha enseñado a ser mejor, a crecer, a soñar más grande y a creer en la magia de la vida. Contigo, he aprendido que el amor no es solo un sentimiento, sino una elección que hacemos todos los días, una promesa de estar ahí el uno para el otro, pase lo que pase.
+          
+          Quiero que sepas que, aunque han pasado tres años, mi amor por ti sigue creciendo cada día. Eres mi razón para sonreír, mi motivo para levantarme cada mañana con ganas de conquistar el mundo. No hay nada en este mundo que me haga más feliz que saber que puedo amarte y que puedo compartir mi vida contigo.</p>
+        
         <!-- Botón para abrir Flores.html -->
         <button onclick="window.open('Flores.html', '_blank')">Abrir</button>
       </div>
